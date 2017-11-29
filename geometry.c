@@ -12,7 +12,6 @@
 #include <stdio.h>
 #include <math.h>
 #include <errno.h>
-
 #include "geometry.h"
 
 #define FUZZY_EQ 0.01
@@ -68,4 +67,12 @@ void coord_2d_midpoint(coord_2d_t* mid, const coord_2d_t* a, const coord_2d_t* b
     mid->x = ((a->x + b->x) / 2.0 );
     mid->y = ((a->y + b->y) / 2.0 );
 
+}
+
+double coord_2d_area_triangle(coord_2d_t* a, const coord_2d_t* b, const coord_2d_t* c){
+    double firstPart= a->x * (b -> y - c -> y);
+    double secondPart = b->x * (c -> y - a ->y);
+    double thirdPart = c->x * (a -> y - b -> y);
+    return (firstPart + secondPart + thirdPart) / 2;
+    
 }
