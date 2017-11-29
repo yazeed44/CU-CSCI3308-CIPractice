@@ -106,7 +106,7 @@ START_TEST(test_2d_area_triangle)
     c.y=24;
     
     
-    ck_assert(coord_2d_area_triangle(&a, &b,&c) == 234);
+    ck_assert(coord_2d_area_triangle(&a, &b,&c) == 234.00);
 
     a.x = a.y = b.x = b.y = c.x = c.y = 0;
     ck_assert(coord_2d_area_triangle(&a, &b,&c) == 0);
@@ -193,6 +193,7 @@ Suite* coord_2d_suite(void)
     suite_add_tcase(s, tc_2d_eq);
     suite_add_tcase(s, tc_2d_dist);
     suite_add_tcase(s, tc_2d_midpoint);
+    suite_add_tcase(s,triangle_area);
 
     /* Return Suite */
     return s;

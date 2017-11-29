@@ -73,6 +73,6 @@ double coord_2d_area_triangle(coord_2d_t* a, const coord_2d_t* b, const coord_2d
     double firstPart= a->x * (b -> y - c -> y);
     double secondPart = b->x * (c -> y - a ->y);
     double thirdPart = c->x * (a -> y - b -> y);
-    return (firstPart + secondPart + thirdPart) / 2;
+    return abs(firstPart + secondPart + thirdPart) / 2;
     
 }
